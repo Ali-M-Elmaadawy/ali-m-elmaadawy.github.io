@@ -1,132 +1,385 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملف المشاريع</title>
-    <style>
-        /* التنسيق الأساسي CSS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .profile-section {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .profile-img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: #0779e4 3px solid;
-        }
-        .projects-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .project-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: right; /* محاذاة النص لليمين */
-        }
-        .project-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .project-card h3 {
-            color: #0779e4;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            background-color: #333;
-            color: #fff;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Elmaadawy — Portfolio</title>
+  <meta name="description" content="Professional portfolio of Ali Elmaadawy, Web Developer." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: Inter, system-ui; background: linear-gradient(180deg,#071029,#071827);
+      color:#e6eef6; padding:32px; display:flex; justify-content:center;
+    }
+    .container{width:100%; max-width:var(--maxw)}
+    header{display:flex; gap:16px; align-items:center; margin-bottom:22px}
+    .avatar{width:96px;height:96px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#03111a}
+    .name{font-size:22px;font-weight:700}
+    .role{color:var(--muted);margin-top:6px}
+    .card{background:var(--glass);padding:20px;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,0.5)}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .projects-list{display:grid;gap:12px;margin-top:12px}
+    .project{display:flex;gap:12px;padding:12px;border-radius:12px;background:var(--glass);transition:0.3s;}
+    .tags{display:flex;gap:8px;margin-top:6px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.05);color:var(--muted)}
+    .btn{padding:8px 12px;border-radius:10px;background:var(--accent);color:#04212a;font-weight:600;text-decoration:none}
+    .sidebar .section{margin-bottom:18px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.05);padding:8px 10px;border-radius:10px;font-size:13px}
+  .project:hover{box-shadow:0 0 12px rgba(6,182,212,0.5);} 
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="grid">
+      <main>
+        <div class="card">
+          <header>
+            <img id="avatar" src="files/profile.jpg" style="width:96px;height:96px;border-radius:18px;object-fit:cover;"/>
+            <div>
+              <div class="name">Ali Elmaadawy <a target="_blank" href="files/ali-elmaadawy.pdf" download class="btn" style="margin-left:10px;padding:4px 10px;font-size:12px;">Download CV</a></div>
+              <div class="role">Web Developer</div>
+              <div style="margin-top:8px"><a target="_blank"  class="btn" href="https://github.com/Ali-M-Elmaadawy">GitHub Profile</a></div>
+            </div>
+          </header>
 
-    <header>
-        <div class="container">
-            <h1>ملف المشاريع الشخصي</h1>
-        </div>
-    </header>
+          <section>
+            <h3>About Me</h3>
+            <p style="line-height:1.6;color:#cfe7f6">
+              Web Developer with 6+ years of experience building scalable web applications using PHP, Laravel, Vue.js, and modern technologies.
+            </p>
+          </section>
 
-    <div class="container">
-        <!-- قسم النبذة الشخصية -->
-        <section class="profile-section">
-            <img src="[رابط_الصورة_الشخصية_هنا]" alt="صورة شخصية" class="profile-img">
-            <h2>Ali ELmaadawy </h2>
-            <p>نبذة عنك وعن مجال تخصصك وخبراتك.</p>
-        </section>
-
-        <!-- قسم المشاريع -->
-        <section class="projects-section">
-            <!-- مشروع 1 -->
-            <div class="project-card">
-                <img src="[رابط_صورة_المشروع_1_هنا]" alt="صورة المشروع الأول">
-                <h3>عنوان المشروع الأول</h3>
-                <p>وصف مختصر للمشروع الأول.</p>
+          <section style="margin-top:20px">
+            <h3>Projects</h3>
+            <div class="projects-list">
+              <!-- Project 1 -->
+            <div class="project" id="p1" onclick="openModal('p1-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/main_city.jpg" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>CityCrepe Application</h4>
+                    <p>Restaurant ordering system with integrated payment gateway.</p>
+                </div>
             </div>
 
-            <!-- مشروع 2 -->
-            <div class="project-card">
-                <img src="[رابط_صورة_المشروع_2_هنا]" alt="صورة المشروع الثاني">
-                <h3>عنوان المشروع الثاني</h3>
-                <p>وصف مختصر للمشروع الثاني.</p>
+            <div class="project-modal" id="p1-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">CityCrepe — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/city1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/city2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/city3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/city4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p1-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button>
+                </div>
             </div>
 
-            <!-- مشروع 3 -->
-            <div class="project-card">
-                <img src="[رابط_صورة_المشروع_3_هنا]" alt="صورة المشروع الثالث">
-                <h3>عنوان المشروع الثالث</h3>
-                <p>وصف مختصر للمشروع الثالث.</p>
+            <!-- Project 2 -->
+            <div class="project" id="p2" onclick="openModal('p2-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/scooterx_main.png" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>ScooterX Application</h4>
+                    <p>Discover, buy, and sell scooters and accessories in Egypt with the SCOOTERX app. Connect with top vendors, chat with sellers, and make direct calls.</p>
+                </div>
             </div>
+
+            <div class="project-modal" id="p2-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">CityCrepe — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/scooter1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p2-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project" id="p3" onclick="openModal('p3-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/mahfol_main.png" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>Mahful Application</h4>
+                    <p>Full-featured reservations for the Saudi market.</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p3-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:1000px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">Mahful — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/mahfol1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/mahfol2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/mahfol3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/mahfol4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/mahfol5.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p3-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project" id="p3" onclick="openModal('p3-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/scooterx_main.png" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>MennaKsa E‑commerce</h4>
+                    <p>Full-featured e-commerce platform for the Saudi market.</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p3-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">CityCrepe — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/scooter1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p3-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
+
+            <!-- Project 4 -->
+            <div class="project" id="p4" onclick="openModal('p4-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/dar_main.jpg" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>Dar Real Estate Platform (web & app)</h4>
+                    <p>Real estate platform with advanced search and filtering.</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p4-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">Dar — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/dar1.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/dar2.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/dar3.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/dar4.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p4-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
             
-             <!-- مشروع 4 (يمكنك إضافة المزيد) -->
-            <div class="project-card">
-                <img src="[رابط_صورة_المشروع_4_هنا]" alt="صورة المشروع الرابع">
-                <h3>عنوان المشروع الرابع</h3>
-                <p>وصف مختصر للمشروع الرابع.</p>
-            </div>
-        </section>
-    </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; السنة الحالية</p>
-    </footer>
+
+
+            <!-- Project 5 -->
+            <div class="project" id="p5" onclick="openModal('p5-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/scooterx_main.png" class="thumb" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>POS System</h4>
+                    <p>Point‑of‑sale system with reporting and inventory control.</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p5-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">CityCrepe — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/scooter1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/scooter4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p5-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
+
+            <!-- Project 6 -->
+            <div class="project" id="p6" onclick="openModal('p6-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/scooterx_main.png" class="thumb" style="width:50px;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>Ram Office Application</h4>
+                    <p>Ram Office is the official mobile application for RAM Accounting Office.
+It is designed to help team members manage their daily tasks and improve internal workflow. With Ram Office, employees can organise assignments, track deadlines, and collaborate more effectively within the office.</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p6-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">RamOffice — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/ram1.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/ram2.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/ram3.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/ram4.png" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p6-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+            <!-- Project 7 -->
+            <div class="project" id="p7" onclick="openModal('p7-modal')">
+                <a style="width:60px;height:50px;display:block;">
+                    <img src="files/shuwier_main.jpg" class="thumb" style="width:50px;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;" />
+                </a>
+                <div class="meta">
+                    <h4>Shuwier Website</h4>
+                    <p>Freelance marketplace connecting clients with professionals</p>
+                </div>
+            </div>
+
+            <div class="project-modal" id="p7-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);padding:50px;box-sizing:border-box;overflow:auto;z-index:9999;">
+                <div style="background:#0b1220;padding:15px;border-radius:12px;max-width:900px;margin:auto;">
+                    <h3 style="margin-top:0;color:#fff;">RamOffice — Gallery</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:10px;">
+                        <img src="files/shuwier1.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/shuwier2.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/shuwier3.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/shuwier4.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/shuwier5.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <img src="files/shuwier6.jpg" style="width:100%;height:450px;border-radius:10px;object-fit:cover;" />
+                        <!-- <img src="files/city1.png" style="width:100%;height:150px;border-radius:10px;object-fit:cover;" /> -->
+                        <!-- ممكن تضيف أي عدد من الصور بنفس الطريقة -->
+                    </div>
+                    <a href="#" class="btn" style="margin-top:12px;display:inline-block;">Open Project</a>
+                    <button onclick="closeModal('p7-modal')" class="btn" style="background:#7c3aed;color:white;margin-top:10px;">Close</button2>
+                </div>
+            </div>
+
+
+              
+
+              <div class="project">
+                <a href="#" style="width:60px;height:50px;display:block;">
+                  <img src="#" style="width:100%;height:100%;border-radius:8px;object-fit:cover;" />
+                </a>
+                <div class="meta">
+                  <h4><a href="#" style="color:inherit;text-decoration:none;">ERP System</a></h4>
+                  <p>Enterprise resource planning system with multi‑module architecture.</p>
+                  
+                </div>
+              </div>
+
+              <div class="project">
+                <a href="#" style="width:60px;height:50px;display:block;">
+                  <img src="#" style="width:100%;height:100%;border-radius:8px;object-fit:cover;" />
+                </a>
+                <div class="meta">
+                  <h4><a href="#" style="color:inherit;text-decoration:none;">Vetution Platform</a></h4>
+                  <p>Multi‑vendor veterinary pharmacy marketplace.</p>
+                  
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div class="section">
+            <h3>Experience</h3>
+            <ul>
+              <li><strong>Cloud Secrets</strong> — Web Developer (Feb 2025 – Present)</li>
+              <li><strong>Digix</strong> — Web Developer (May 2022 – Jan 2025)</li>
+              <li><strong>BeOneExpress</strong> — Web Developer (Mar 2021 – May 2022)</li>
+              <li><strong>Serve5</strong> — Web Developer (Sep 2020 – Feb 2021)</li>
+              <li><strong>Smart Touch Solutions</strong> — Web Developer (Oct 2019 – Aug 2020)</li>
+              <li><strong>Pencil Network Company</strong> — Web Developer (Aug 2018 – Sep 2019)</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3>Skills</h3>
+            <div class="skills">
+              <span class="skill">PHP</span><span class="skill">LARAVEL</span><span class="skill">JAVASCRIPT</span>
+              <span class="skill">VUEJS</span><span class="skill">SQL</span><span class="skill">NOSQL</span>
+              <span class="skill">GIT</span><span class="skill">DOCKER</span>
+              <span class="skill">WebSockets</span><span class="skill">APIS</span>
+              <span class="skill">OOP</span><span class="skill">SOLID</span>
+              <span class="skill">REDIS</span>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Contact</h3>
+            <p>Email: alisonny2009@gmail.com</p>
+            <p>Phone: +20 100 223 0585</p>
+            <p>Location: Cairo, Egypt</p>
+            <p>LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/ali-elmaadawy">ali-elmaadawy</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+
+<!-- Modal Structure -->
+<div id="projectModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#0b1220;padding:20px;border-radius:14px;max-width:700px;width:90%;max-height:90%;overflow:auto;box-shadow:0 0 20px rgba(0,0,0,0.5);">
+    <h2 id="modalTitle" style="margin-top:0;margin-bottom:10px;color:#fff;"></h2>
+
+    <!-- images container -->
+    <div id="modalImages" style="display:grid;gap:12px;margin-bottom:20px;"></div>
+
+    <!-- project link -->
+    <a id="modalLink" href="#" target="_blank" class="btn" style="display:inline-block;margin-top:10px;">Open Project</a>
+
+    <!-- close -->
+    <div style="margin-top:20px;text-align:right;">
+      <button onclick="closeModal()" class="btn" style="background:#7c3aed;color:white;">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(id){
+    document.getElementById(id).style.display = 'block';
+}
+function closeModal(id){
+    document.getElementById(id).style.display = 'none';
+}
+</script>
 
 </body>
 </html>
